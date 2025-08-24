@@ -19,3 +19,18 @@ Includes pre-installed dependencies, fonts, and a clean folder structure to save
 ```bash
 git clone https://github.com/Aceee03/react-native-starter-template.git
 cd react-native-starter-template
+```
+
+### 2. Install Dependencies
+```bash
+npm install
+```
+
+### 3. Start the App
+```bash
+npx expo start
+```
+or 
+```
+npm run android
+```
