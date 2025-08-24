@@ -1,15 +1,17 @@
 # 🚀 React Native Starter Template
 
-A simple **starter template** for quickly bootstrapping new React Native apps with Expo.  
-Includes pre-installed dependencies, fonts, and a clean folder structure to save time when starting new projects.
+A simple **React Native starter template** with essential dependencies and setup included.  
+Use this as a boilerplate to kickstart your new React Native projects without repeating the setup process every time.
 
 ---
 
 ## 📦 Features
-- ⚡️ React Native with Expo
-- 🎨 Pre-configured **Space Grotesk** font
-- 🛠 Ready-to-use folder structure
-- 📱 Supports Android, iOS, and Web
+
+- ⚛️ [React Native](https://reactnative.dev/) pre-configured
+- 🛠️ [Expo](https://expo.dev/) for development & build
+- 🎨 [TailwindCSS / NativeWind] (if included)
+- 🔤 Custom global font setup ([Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk))
+- ✅ Pre-installed dependencies and ready-to-use structure
 
 ---
 
