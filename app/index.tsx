@@ -1,12 +1,12 @@
-import React from "react";
-import { Text, TextInput, View } from "react-native";
-import AppLoading from "expo-app-loading";
 import {
-  useFonts,
   SpaceGrotesk_400Regular,
   SpaceGrotesk_500Medium,
   SpaceGrotesk_700Bold,
+  useFonts,
 } from "@expo-google-fonts/space-grotesk";
+import * as SplashScreen from "expo-splash-screen";
+import React, { useEffect } from "react";
+import { Text, TextInput, View } from "react-native";
 
 export default function App() {
   // Load fonts
@@ -16,9 +16,27 @@ export default function App() {
     SpaceGrotesk_700Bold,
   });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+  useEffect(() => {
+    // Keep the splash screen visible while we load resources
+    async function prepare() {
+      try {
+        await SplashScreen.preventAutoHideAsync();
+      } catch (e) {
+        console.warn("Failed to prevent auto hide of splash screen:", e);
+      }
+    }
+    prepare();
+  }, []);
+
+  useEffect(() => {
+    // Hide the splash screen once fonts are loaded
+    if (fontsLoaded) {
+      SplashScreen.hideAsync().catch((e) =>
+        console.warn("Failed to hide splash screen:", e)
+      );
+    }
+  }, [fontsLoaded]);
+
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center", padding: 20 }}>
       <Text>Hello Tow-er 🚗</Text>
@@ -26,8 +44,8 @@ export default function App() {
         This is Bold Space Grotesk
       </Text>
       <TextInput
-      className="border-2"
-      placeholder="Type here..." />
+        className="border-2"
+        placeholder="Type here..." />
     </View>
   );
 }
