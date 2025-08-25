@@ -45,7 +45,7 @@ export default function App() {
       </Text>
       <TextInput
         className="border-2"
-        placeholder="Type here..." />
+        placeholder="Type here" />
     </View>
   );
 }
