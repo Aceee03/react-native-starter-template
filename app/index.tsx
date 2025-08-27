@@ -4,6 +4,7 @@ import {
   SpaceGrotesk_700Bold,
   useFonts,
 } from "@expo-google-fonts/space-grotesk";
+import { Link } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import React, { useEffect } from "react";
 import { Text, TextInput, View } from "react-native";
@@ -38,14 +39,17 @@ export default function App() {
   }, [fontsLoaded]);
 
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center", padding: 20 }}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        padding: 20,
+      }}
+    >
       <Text>Hello Tow-er 🚗</Text>
-      <Text className="font-medium">
-        This is Bold Space Grotesk
-      </Text>
-      <TextInput
-        className="border-2"
-        placeholder="Type here" />
+      <Text className="font-medium">This is Bold Space Grotesk</Text>
+      <TextInput className="border-2" placeholder="Type here" />
     </View>
   );
 }
